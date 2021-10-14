@@ -39,6 +39,7 @@
 		<button onclick="makeNewDiv()">Push Value</button>
 		<button onclick="popItem()">Pop Value</button>
 		<button onclick="zap()">Zap Value</button>
+		<button onclick="unique()">Unique</button>
 	
 </body>
 <script>
@@ -68,6 +69,18 @@ function popItem() {
 					i--
 				}
 			}
+		}
+	}
+	function unique()
+	{
+		var stack = document.getElementsByClassName("stack")
+		for(var i=0; i<stack.length; i++){
+			for(var j=i+1; j<stack.length; j++){
+                if(stack[i].innerHTML == stack[j].innerHTML){
+                    stack[j].remove()
+                    j--;i--
+                }
+            }
 		}
 	}
 </script>

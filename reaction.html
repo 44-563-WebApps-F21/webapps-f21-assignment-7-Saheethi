@@ -33,16 +33,21 @@
     myTime = Date.now();
     console.log(myTime)
   }
+
   function startTime() {
-    for(let i=0; i<=3; i++){
-          setTimeout(()=>{
+        let min = 2
+      let max = 10
+      count = Math.floor(Math.random()*(max-min+1)+min)
+      for(let i=0; i<count; i++){
+        setTimeout(()=>{
               document.getElementById("count").innerHTML = "Count: " + i
           }, (3-i)*1000)
       }
-      setTimeout(()=>{
+      setTimeout(() => {
           checkMyTime()
       }, 3000)
-  }
+    }
+  
   function checkMyTime(){
       var element = document.getElementById("timer")
       if(myTime == undefined)

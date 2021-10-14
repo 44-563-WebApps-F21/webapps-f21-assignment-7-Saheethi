@@ -117,13 +117,17 @@
       </div>
   </div >
     </div>
+    <button id="newgame" onclick="newgame()"> New Game</button>
+
     <script>
         var ids = ["im1","im2","im3","im4","im5","im6","im7","im8","im9","im10","im11","im12","im13","im14","im15","im16","im17","im18","im19","im20","im21","im22","im23","im24"];
         var triesCount = 0;
-        var animalLocation = 13;
+        var animalLocation = Math.floor(Math.random()*23);
         var imageid;
+        var positionduplicate
         function check(position)
         {
+            positionduplicate = position
           for(let i=0;i<ids.length;i++)
           {
             if(i==position){
@@ -175,7 +179,15 @@
                   dpos1pos2 = (Math.abs(x2-x1)+Math.abs(y2-y1));
               }    
               return dpos1pos2;         
-          }      
+          }  
+          
+          function newgame(){
+              triesCount = 0;
+              animalLocation = Math.floor(Math.random()*23) ;
+              document.getElementById("tries").innerHTML = "Number of tries is zero";            
+              document.getElementById("distance").innerHTML="Distance is Unknown";
+            
+          }
     </script>
   
 </body>
