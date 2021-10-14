@@ -44,17 +44,17 @@
 <script>
 	function makeNewDiv() {
 	
-	var element = document.createElement("div")
+	var divelement = document.createElement("div")
 	var input = document.getElementById("InputElement")
-	element.innerHTML = input.value
-	element.className = "stack"	
-	document.getElementById('target').appendChild(element)
+	divelement.innerHTML = input.value
+	divelement.className = "stack"	
+	document.getElementById('target').appendChild(divelement)
 }
 function popItem() {
 		var Items = document.getElementsByClassName("stack")
-		var Length = Items.length
-		if (Length > 0)
-			Items[Length - 1].remove()
+		var len = Items.length
+		if (len > 0)
+			Items[len - 1].remove()
 	}
 	function zap() {
 		var Items = document.getElementsByClassName("stack")
