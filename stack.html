@@ -27,15 +27,18 @@
 	<h2>Builds a stack</h2>
 	<input type="text" id="InputElement"> 
 	<br>
+	<br>
 		<div class="flex-container" id="target">
 		  <div class= "stack">row item 1</div>   
 		  <div class= "stack">row item 2</div>  
 		  <div class= "stack">row item 3</div>  
 		</div>
 	
-	<p> Press the button to create an new element of type div and then add it to the container.
-		</p>
+	<p> Press the buttons to PUSH POP or ZAP the elements .</p>
+	<br>
 		<button onclick="makeNewDiv()">Push Value</button>
+		<button onclick="popItem()">Pop Value</button>
+		<button onclick="zap()">Zap Value</button>
 	
 </body>
 <script>
@@ -47,5 +50,25 @@
 	element.className = "stack"	
 	document.getElementById('target').appendChild(element)
 }
+function popItem() {
+		var Items = document.getElementsByClassName("stack")
+		var Length = Items.length
+		if (Length > 0)
+			Items[Length - 1].remove()
+	}
+	function zap() {
+		var Items = document.getElementsByClassName("stack")
+		let input = document.getElementById("InputElement").value
+		if (Items != undefined && Items.length > 0) {
+			for (let i = 0; i < Items.length; i++) {
+				if (Items[i].innerHTML == input) {
+					var itemToBeRemoved = Items[i].innerHTML
+					Items[i].remove()
+					console.log(itemToBeRemoved)
+					i--
+				}
+			}
+		}
+	}
 </script>
 </html>	
