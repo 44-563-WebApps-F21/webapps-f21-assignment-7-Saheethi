@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<title> Push and Pop Items</title>
+	 <head>
+		  <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: rgb(255, 0, 119);
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #eba0a0; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+</head>
+
+<body>
+	<h2>Builds a stack</h2>
+	<input type="text" id="InputElement"> 
+	<br>
+		<div class="flex-container" id="target">
+		  <div class= "stack">row item 1</div>   
+		  <div class= "stack">row item 2</div>  
+		  <div class= "stack">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Push Value</button>
+	
+</body>
+<script>
+	function makeNewDiv() {
+	
+	var element = document.createElement("div")
+	var input = document.getElementById("InputElement")
+	element.innerHTML = input.value
+	element.className = "stack"	
+	document.getElementById('target').appendChild(element)
+}
+</script>
+</html>	
